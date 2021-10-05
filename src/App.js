@@ -14,6 +14,11 @@ class App extends Component {
           <button onClick={this.props.onAdd}>Добавить 1</button>
           <button onClick={this.props.onSub}>Вычесть 1</button>
         </div>
+
+        <div className="Actions">
+          <button onClick={() => this.props.onAddNumb(13)}>Добавить 13</button>
+          <button onClick={this.props.onSubNumb.bind(this, 13)}>Вычесть 13</button>
+        </div>
       </div>
     )
   }
@@ -28,7 +33,9 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
   return {
     onAdd: () => dispatch({type: 'ADD'}),
-    onSub: () => dispatch({type: 'SUB'})
+    onSub: () => dispatch({type: 'SUB'}),
+    onAddNumb: number => dispatch({type: 'ADD_NUMB', payload: number}),
+    onSubNumb: number => dispatch({type: 'SUB_NUMB', payload: number})
   }
 }
 
