@@ -51,3 +51,11 @@ export function subNumb2(number) {
         payload: number
     }
 }
+
+export function asyncAdd(number) {
+    return (dispatch) => {
+        setTimeout(() => {
+            dispatch(addNumb(number))
+        }, 3000)
+    }
+}
