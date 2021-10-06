@@ -16,6 +16,7 @@ import App from './App'
 //     }
 //   }
 // }
+
 const loggerMiddleware = store => next => action => {
   const result = next(action)
 
